@@ -3,6 +3,7 @@ import cors from 'cors';
 import { Database } from './database';
 import { healthRoute } from './routes/health.routes';
 import dotenv from 'dotenv';
+import { authRoute } from './routes/auth.routes';
 export class App {
 	public express: express.Application;
 	private database: Database;
@@ -28,5 +29,6 @@ export class App {
 
 	private router() {
 		this.express.use(healthRoute);
+		this.express.use(authRoute);
 	}
 }

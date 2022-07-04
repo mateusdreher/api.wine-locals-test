@@ -1,5 +1,7 @@
 import { UserModel } from '../../src/models/user.model';
 import { TestsConfigs } from '../config';
+import * as supertest from 'supertest';
+import { App } from '../../src/app';
 
 describe('Authentication', () => {
 	beforeEach(() => {
@@ -14,16 +16,22 @@ describe('Authentication', () => {
 		new TestsConfigs().disconnectDataBase();
 	})
 
-	it('should create an user', async () => {
+	it('should authenticate with valid credentials', async () => {
 		const user = {
 			name: 'Mateus',
 			email: 'mateus@email.com',
 			password: 'haha'
 		}
 	
-		const createdUser = await UserModel.create(user);
+		await UserModel.create(user);
 
-		console.log(createdUser);
-		expect(createdUser.email).toBe(user.email);
+		const response = await supertest(new App().express)
+			.post('/auth')
+			.send({
+				email: user.email,
+				password: 'haha'
+			});
+
+		expect(response.status).toBe(200);
 	})
 })
