@@ -1,6 +1,6 @@
-import { UserModel } from '../../src/models/user.model';
+import { AuthModel } from '../../src/auth/auth.model';
 import { TestsConfigs } from '../config';
-import * as supertest from 'supertest';
+import supertest from 'supertest';
 import { App } from '../../src/app';
 
 describe('Authentication', () => {
@@ -8,22 +8,21 @@ describe('Authentication', () => {
 		new TestsConfigs().connectDatabase();
 	});
 
-	beforeEach(() => {
-		new TestsConfigs().cleanCollection(UserModel);
+	afterEach(() => {
+		new TestsConfigs().cleanCollection(AuthModel);
 	});
 
-	beforeAll(() => {
+	afterAll(() => {
 		new TestsConfigs().disconnectDataBase();
 	})
 
 	it('should authenticate with valid credentials', async () => {
 		const user = {
-			name: 'Mateus',
 			email: 'mateus@email.com',
 			password: 'haha'
 		}
 	
-		await UserModel.create(user);
+		await AuthModel.create(user);
 
 		const response = await supertest(new App().express)
 			.post('/auth')

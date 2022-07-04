@@ -11,4 +11,4 @@ const AuthSchema = new mongoose.Schema({
 	}
 });
  
-export const AuthModel = mongoose.model('auth', AuthSchema); 
+export const AuthModel = mongoose.model('auth', AuthSchema, 'auth'); 

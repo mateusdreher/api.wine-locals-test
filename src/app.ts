@@ -28,7 +28,7 @@ export class App {
 	}
 
 	private router() {
-		this.express.use(healthRoute);
-		this.express.use(authRoute);
+		this.express.use('/', healthRoute);
+		this.express.use('/auth', authRoute);
 	}
 }
