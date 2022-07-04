@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Model } from 'mongoose';
 
 export class Database {
 	connect(connectionString: string) {
@@ -14,5 +14,11 @@ export class Database {
 
 	disconnect() {
 		mongoose.disconnect();
+	}
+
+	cleanCollection(model: Model<any>) {
+		model.remove({}, () => {
+			
+		});
 	}
 }

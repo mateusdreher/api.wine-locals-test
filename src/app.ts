@@ -8,7 +8,9 @@ export class App {
 	private database: Database;
 	
 	constructor() {
-		dotenv.config();
+		dotenv.config({
+			path: process.env.NODE_ENV === 'test' ? 'env.test' : '.env'
+		});
 		this.express = express();
 		this.database = new Database();
 
