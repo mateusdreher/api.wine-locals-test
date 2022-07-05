@@ -1,7 +1,7 @@
 import { AuthModel } from '../../src/auth/auth.model';
 import { TestsConfigs } from '../config';
-import supertest from 'supertest';
 import { App } from '../../src/app';
+import supertest from 'supertest';
 import bcrypt from 'bcrypt'; 
 
 describe('Authentication', () => {

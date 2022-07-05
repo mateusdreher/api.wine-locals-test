@@ -1,12 +1,12 @@
 import { AuthRequestDto } from "../../dtos/auth/auth-request.dto";
 import { AuthResponseDto } from "../../dtos/auth/auth-response.dto";
-import { IAuthRepositoryInterface } from "../repository/auth.repository.interface";
-import { AuthUseCaseInterface } from "./auth.use-case.interface";
+import { IAuthRepository } from "../repository/auth.repository.interface";
+import { IAuthUseCase } from "./auth.use-case.interface";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-export class AuthUseCase implements AuthUseCaseInterface {
+export class AuthUseCase implements IAuthUseCase {
 	constructor(
-		private repository: IAuthRepositoryInterface
+		private repository: IAuthRepository
 	){}
 
 	async auth(dto: AuthRequestDto): Promise<AuthResponseDto | string> {

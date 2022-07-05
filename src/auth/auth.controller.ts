@@ -1,9 +1,9 @@
-import { AuthUseCaseInterface } from "./use-case/auth.use-case.interface";
+import { IAuthUseCase } from "./use-case/auth.use-case.interface";
 import { Request, Response } from 'express';
 
 export class AuthController {
 	constructor(
-		private authUseCase: AuthUseCaseInterface
+		private authUseCase: IAuthUseCase
 	) {}
 
 	async handle(request: Request, response: Response) {

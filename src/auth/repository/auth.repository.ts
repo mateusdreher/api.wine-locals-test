@@ -1,8 +1,8 @@
 import { AuthEntity } from "../auth.entity";
 import { AuthModel } from "../auth.model";
-import { IAuthRepositoryInterface } from "./auth.repository.interface";
+import { IAuthRepository } from "./auth.repository.interface";
 
-export class AuthRepository implements IAuthRepositoryInterface {
+export class AuthRepository implements IAuthRepository {
 	private model = AuthModel;
 
 	constructor() {}

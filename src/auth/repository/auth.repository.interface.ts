@@ -1,5 +1,5 @@
 import { AuthEntity } from "../auth.entity";
 
-export interface IAuthRepositoryInterface {
+export interface IAuthRepository {
 	getByEmail(email: string): Promise<AuthEntity | undefined>;
 }
