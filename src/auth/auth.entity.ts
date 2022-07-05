@@ -1,5 +1,5 @@
 export class AuthEntity {
-	public readonly _id?: string;
+	public readonly _id?: any;
 	public email: string;
 	public password: string;
 

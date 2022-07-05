@@ -2,6 +2,7 @@ import { AuthModel } from '../../src/auth/auth.model';
 import { TestsConfigs } from '../config';
 import supertest from 'supertest';
 import { App } from '../../src/app';
+import bcrypt from 'bcrypt'; 
 
 describe('Authentication', () => {
 	beforeEach(() => {
@@ -17,9 +18,10 @@ describe('Authentication', () => {
 	})
 
 	it('should authenticate with valid credentials', async () => {
+		const ecryptedPassword = await bcrypt.hash('haha', 10);
 		const user = {
 			email: 'mateus@email.com',
-			password: 'haha'
+			password: ecryptedPassword
 		}
 	
 		await AuthModel.create(user);

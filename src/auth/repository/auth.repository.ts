@@ -15,6 +15,7 @@ export class AuthRepository implements IAuthRepositoryInterface {
 		}
 
 		return {
+			_id: user._id,
 			email: user.email,
 			password: user.password
 		}

@@ -25,8 +25,6 @@ export class AuthUseCase implements AuthUseCaseInterface {
 	}
 
 	generateToken(user_id: string) {
-		console.log(process.env.SECRET);
-		
 		return jwt.sign({id: user_id}, process.env.SECRET || '', {
 			expiresIn: 3600
 		});
