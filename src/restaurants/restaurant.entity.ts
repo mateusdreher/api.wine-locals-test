@@ -6,7 +6,6 @@ export class RestaurantEntity {
 	public rating: number;
 
 	constructor(restaurant: RestaurantEntity) {
-		this._id = !this._id ? restaurant._id : this._id;
 		this.name = restaurant.name;
 		this.address = restaurant.address;
 		this.dishes = restaurant.dishes;

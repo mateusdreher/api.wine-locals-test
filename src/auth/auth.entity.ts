@@ -4,7 +4,6 @@ export class AuthEntity {
 	public password: string;
 
 	constructor(auth: AuthEntity) {
-		this._id = !this._id ? auth._id : this._id
 		this.email = auth.email;
 		this.password = auth.password;
 	}

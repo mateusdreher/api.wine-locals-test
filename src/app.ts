@@ -5,6 +5,7 @@ import { healthRoute } from './routes/health.routes';
 import dotenv from 'dotenv';
 import { authRoute } from './routes/auth.routes';
 import { restaurantsRoute } from './routes/restaurants.routes';
+import { dishesRoute } from './routes/dishes.routes';
 export class App {
 	public express: express.Application;
 	private database: Database;
@@ -32,5 +33,6 @@ export class App {
 		this.express.use('/', healthRoute);
 		this.express.use('/auth', authRoute);
 		this.express.use('/restaurants', restaurantsRoute);
+		this.express.use('/dishes', dishesRoute);
 	}
 }
