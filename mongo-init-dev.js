@@ -10,8 +10,8 @@ db.createUser({
 });
 
 db = db.getSiblingDB('wine_locals');
-db.createCollection('auth');
-db.users.insert({
+db.createCollection('user_auth');
+db.user_auth.insert({
   "email": "cleitonbomdeguerra@olimpus.com",
   "password": "$2b$10$YH18sgXQFxVCtX1tBCM8NOgPKsL4wglAwNxMSUXuYYsaxe4Fdzdru" //ihatezeus123
 });
