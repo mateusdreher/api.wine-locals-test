@@ -3,8 +3,8 @@ import { dishController } from "../dishes";
 
 const dishesRoute = Router();
 
-dishesRoute.get('/', (request: Request, response: Response) => {
-	return dishController.list(request, response);
+dishesRoute.get('/restaurant/:restaurant_id', (request: Request, response: Response) => {
+	return dishController.listByRestaurant(request, response);
 });
 
 dishesRoute.post('/new', (request: Request, response: Response) => {

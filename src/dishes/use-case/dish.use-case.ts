@@ -8,8 +8,8 @@ export class DishUseCase implements IDishUseCase {
 		private repository: IDishREpository
 	){}
 
-	async list(): Promise<DishEntity[]> {
-		return await this.repository.list();
+	async listByRestaurant(restaurant_id: string): Promise<DishEntity[]> {
+		return await this.repository.listByRestaurant(restaurant_id);
 	}
 
 	async create(dto: DishCreateDto): Promise<DishEntity> {

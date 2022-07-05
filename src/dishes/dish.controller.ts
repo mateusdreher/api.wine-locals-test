@@ -7,10 +7,15 @@ export class DishController {
 		private dishUseCase: IDishUseCase
 	){}
 
-	async list(request: Request, response: Response) {
+	async listByRestaurant(request: Request, response: Response) {
+		const { restaurant_id } = request.params;
+
+		if(!restaurant_id) {
+			return response.status(400).send('Missing restaurant_id');
+		}
 		
 		try {
-			const res = await this.dishUseCase.list();
+			const res = await this.dishUseCase.listByRestaurant(restaurant_id);
 			
 			return response.status(200).send(res);
 		}

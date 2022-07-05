@@ -12,6 +12,10 @@ const DishSchema = new mongoose.Schema({
 	value: {
 		type: Number,
 		required: true
+	},
+	restaurant_id: {
+		type: String,
+		required: true
 	}
 });
 

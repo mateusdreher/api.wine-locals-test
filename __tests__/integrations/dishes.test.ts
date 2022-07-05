@@ -18,7 +18,7 @@ describe('Dishes', () => {
 
 	it('should list dishes', async () => {
 		const response = await supertest(new App().express)
-			.get('/dishes')
+			.get('/dishes/restaurant/123')
 
 		expect(response.status).toBe(200);
 	});

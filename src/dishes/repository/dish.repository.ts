@@ -10,8 +10,8 @@ export class DishRepository implements IDishREpository {
 		this.model = DishModel;
 	}
 
-	async list(): Promise<DishEntity[]> {
-		return await this.model.find();
+	async listByRestaurant(restaurant_id: string): Promise<DishEntity[]> {
+		return await this.model.find({restaurant_id});	
 	}
 
 	async create(dto: DishCreateDto): Promise<DishEntity> {	
