@@ -25,9 +25,7 @@ export class DishController {
 	}
 
 	async create(request: Request, response: Response) {
-		console.log(request.body);
 		const dto: DishCreateDto = request.body;
-		console.log(dto);
 		if(!dto.name || !dto.description || !dto.value || !dto.restaurant_id) {
 			return response.status(400).send('Verify yout payload');
 		}
