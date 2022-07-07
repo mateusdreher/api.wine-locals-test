@@ -27,7 +27,7 @@ Para rodar a api localmente é necessário:
   * `npm run dev` ou `yarn dev` : Inicia a api em modo de desenvolvimento com auto reload
   * `npm start` ou `yarn start`: Inicia a api em modo de "produção"
 
-Pronto! A api estará rodando na porta padrão (3000) ou na porta que você configurou o .env (caso o tenha modificado)
+Pronto! A api estará rodando na porta padrão (3333) ou na porta que você configurou o .env (caso o tenha modificado)
 
 Quando a api é criada um usuário de teste é disponibilizado para realizar a autenticação:
 ```
@@ -45,10 +45,10 @@ A api funciona no padrão REST com os seguintes endpoints:
  O token é retornado no enndpoint `/auth`
  
  ### Endpoints da API
- * [/](http://localhost:3000/healthcheck) : 
+ * [/](http://localhost:3333/healthcheck) : 
     * `GET` : Serve apenas como healthcheck da api.
     
- * [/auth](http://localhost:3000/auth) : 
+ * [/auth](http://localhost:3333/auth) : 
     * `POST`: Serve para autenticar um usuário, passando o seguinte peyload:
       ```
         {
@@ -58,16 +58,16 @@ A api funciona no padrão REST com os seguintes endpoints:
       ```
       Se a autenticação funcionar, será retornado um token jwt que será utilizado no header `Authorization`.
       
-  * [/restaurants](http://localhost:3000/restaurants) : 
+  * [/restaurants](http://localhost:3333/restaurants) : 
     * `GET` : Lista os restaurantes cadastraados.
     
-  * [/restaurants/:restaurant_id](http://localhost:3000/restaurants/62c384eb14b88c76c52bc245) : 
+  * [/restaurants/:restaurant_id](http://localhost:3333/restaurants/62c384eb14b88c76c52bc245) : 
     * `GET` : Lista as infos de um restaurante especifico (restaurant_id)
     
-  * [/dishes/restaurant/:restaurant_id](http://localhost:3000/dishes/restaurant/62c384eb14b88c76c52bc245) : 
+  * [/dishes/restaurant/:restaurant_id](http://localhost:3333/dishes/restaurant/62c384eb14b88c76c52bc245) : 
     * `GET` : Lista os pratos de um restaurante (restaurant_id).
     
-  * [/dishes/new](http://localhost:3000/dishes/new) : 
+  * [/dishes/new](http://localhost:3333/dishes/new) : 
     * `POST`: Cria um novo prato no restaurante selecionado
       ```
         {
