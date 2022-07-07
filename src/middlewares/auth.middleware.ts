@@ -22,7 +22,6 @@ export class AuthMiddleware {
 		}
 		try {
 				const data: ITokenData = jwt.verify(token, process.env.SECRET) as ITokenData;
-			console.log(data);
 				return next();
 		}
 		catch(error: any) {
