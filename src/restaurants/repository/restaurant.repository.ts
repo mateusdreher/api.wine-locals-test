@@ -11,4 +11,8 @@ export class RestaurantRepository implements IRestaurantRepository {
 	async list(): Promise<RestaurantEntity[]> {
 		return await this.model.find();
 	}
+
+	async getById(_id: string): Promise<RestaurantEntity | null> {
+		return await this.model.findOne({_id});
+	}
 }

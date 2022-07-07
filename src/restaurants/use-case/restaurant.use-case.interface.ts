@@ -2,4 +2,5 @@ import { RestaurantListResponseDto } from "../../dtos/restaurant/restaurant-list
 
 export interface IRestaurantUseCase {
 	list(): Promise<RestaurantListResponseDto[]>;
+	getById(id: string): Promise<RestaurantListResponseDto | null>;
 }
