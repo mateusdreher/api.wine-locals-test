@@ -83,3 +83,8 @@ A api funciona no padrão REST com os seguintes endpoints:
 ## Frontend
 * Para uma utilização visual
 	* Acesse o frontend: https://github.com/mateusdreher/app.wine-locals-test
+
+
+@To-dos:
+* Aumentar a cobertura de testes (integração e unitário)
+* Completar o CRUD nos endpoints
